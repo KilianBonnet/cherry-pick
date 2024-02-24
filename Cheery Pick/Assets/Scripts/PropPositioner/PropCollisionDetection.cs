@@ -9,6 +9,7 @@ public class PropCollisionDetection : MonoBehaviour
     private void Start()
     {
         _outline = gameObject.AddComponent<Outline>();
+        _outline.color = 1;
     }
 
     private void OnCollisionStay(Collision other)
