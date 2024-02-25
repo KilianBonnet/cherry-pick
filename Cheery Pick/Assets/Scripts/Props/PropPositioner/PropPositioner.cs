@@ -12,7 +12,7 @@ public class PropPositioner : MonoBehaviour
     private void Start()
     {
         _propMapper = FindObjectOfType<PropMapper>();
-        PositionProp(PropEnum.FUTON);
+        PositionProp(PropEnum.TEST_PROP);
     }
 
     /// <summary>

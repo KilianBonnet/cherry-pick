@@ -9,13 +9,13 @@ public class PropCollisionDetection : MonoBehaviour
     private void Start()
     {
         _outline = gameObject.GetComponent<Outline>();
-        _outline.enabled = true;
+        _outline.eraseRenderer = false;
         _outline.color = 1;
     }
 
     private void OnCollisionStay(Collision other)
     {
-        if (!other.collider.CompareTag("Layout"))
+        if (!other.collider.CompareTag("Layout") && !other.collider.CompareTag("Prop"))
             return;
 
         CanBePlaced = false;
@@ -24,7 +24,7 @@ public class PropCollisionDetection : MonoBehaviour
 
     private void OnCollisionExit(Collision other)
     {
-        if (!other.collider.CompareTag("Layout"))
+        if (!other.collider.CompareTag("Layout") && !other.collider.CompareTag("Prop"))
             return;
 
         CanBePlaced = true;
@@ -33,6 +33,6 @@ public class PropCollisionDetection : MonoBehaviour
 
     private void OnDestroy()
     {
-        _outline.enabled = false;
+        _outline.eraseRenderer = true;
     }
 }
