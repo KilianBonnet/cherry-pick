@@ -2,5 +2,12 @@ using UnityEngine;
 
 public class Prop : MonoBehaviour
 {
-    private PropModel _model;
+    [SerializeField] private PropId PropId;
+    public PropModel Model { get; private set; } = null;
+
+    private void Start()
+    {
+        Model = new(PropId);
+    }
+
 }

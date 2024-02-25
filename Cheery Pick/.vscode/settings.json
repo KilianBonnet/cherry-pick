@@ -51,5 +51,8 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Cheery Pick.sln"
+    "dotnet.defaultSolution": "Cheery Pick.sln",
+    "cSpell.words": [
+        "Interactor"
+    ]
 }

@@ -1,5 +1,5 @@
 [System.Serializable]
-public enum PropEnum
+public enum PropId
 {
     TEST_PROP = 0,
     JB_DOUBLE_BED = 1,

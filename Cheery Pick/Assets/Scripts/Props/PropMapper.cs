@@ -13,7 +13,7 @@ public class PropMapper : MonoBehaviour
     /// </summary>
     /// <param name="propEnum">The PropEnum to retrieve the Prefab.</param>
     /// <returns>The corresponding Prefab.</returns>
-    public GameObject FindPrefab(PropEnum propEnum)
+    public GameObject FindPrefab(PropId propEnum)
     {
         PropPrefabAssociation find = _propMap.Find(propPrefabAssociation => propPrefabAssociation.PropEnum == propEnum)
             ?? throw new($"Cannot find PropPrefabAssociation corresponding to the given PropEnum: {propEnum}.");
@@ -27,6 +27,6 @@ public class PropMapper : MonoBehaviour
 [Serializable]
 public class PropPrefabAssociation
 {
-    public PropEnum PropEnum;
+    public PropId PropEnum;
     public GameObject Prefab;
 }

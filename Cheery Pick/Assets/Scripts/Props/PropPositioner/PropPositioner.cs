@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PropPositioner : MonoBehaviour
 {
-    public PropEnum propToPlace; // TO DELETE
+    public PropId propToPlace; // TO DELETE
     private PropMapper _propMapper;
 
     // Current Prop
@@ -20,7 +20,7 @@ public class PropPositioner : MonoBehaviour
     /// Start the positioning behaviour.
     /// </summary>
     /// <param name="propToPlace">The PropEnum to place.</param>
-    public void PositionProp(PropEnum propToPlace)
+    public void PositionProp(PropId propToPlace)
     {
         _propToPlace = Instantiate(_propMapper.FindPrefab(propToPlace));
 

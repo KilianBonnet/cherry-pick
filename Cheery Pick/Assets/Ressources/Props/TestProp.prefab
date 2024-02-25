@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5487398539184507863}
   - component: {fileID: 2727029660021376041}
   - component: {fileID: 7959289141956763186}
+  - component: {fileID: 1894295328751561347}
   m_Layer: 0
   m_Name: TestProp
   m_TagString: Prop
@@ -148,3 +149,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: 0
   eraseRenderer: 1
+--- !u!114 &1894295328751561347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5931854655668209383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc4cbccac9189d447ae02bf5275d55ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PropId: 0
