@@ -53,6 +53,8 @@
     },
     "dotnet.defaultSolution": "Cheery Pick.sln",
     "cSpell.words": [
+        "Interactable",
+        "Interactables",
         "Interactor"
     ]
 }
