@@ -315,6 +315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41c67691a3c941b49a1b171899899500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  propToPlace: 1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -574,6 +575,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 310830905465169882, guid: 63775b34fc5f2ae43920d2292eb722f8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4f401202595630340a8535aeae738be2, type: 2}
     - target: {fileID: 1501682723171517165, guid: 63775b34fc5f2ae43920d2292eb722f8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -618,6 +623,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Room-8
       objectReference: {fileID: 0}
+    - target: {fileID: 7001820061866679266, guid: 63775b34fc5f2ae43920d2292eb722f8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 70448211eba5e4649871153bc746b395, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

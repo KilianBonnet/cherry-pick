@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PropPositioner : MonoBehaviour
 {
+    public PropEnum propToPlace; // TO DELETE
     private PropMapper _propMapper;
 
     // Current Prop
@@ -12,7 +13,7 @@ public class PropPositioner : MonoBehaviour
     private void Start()
     {
         _propMapper = FindObjectOfType<PropMapper>();
-        PositionProp(PropEnum.TEST_PROP);
+        PositionProp(propToPlace);
     }
 
     /// <summary>
