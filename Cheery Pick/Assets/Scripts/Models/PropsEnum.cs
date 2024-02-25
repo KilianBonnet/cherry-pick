@@ -1,5 +1,5 @@
 [System.Serializable]
-public enum PropsEnum
+public enum PropEnum
 {
     FUTON = 0,
     BED = 1,

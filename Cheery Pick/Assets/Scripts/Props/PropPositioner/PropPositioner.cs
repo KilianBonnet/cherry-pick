@@ -3,17 +3,18 @@ using UnityEngine;
 
 public class PropPositioner : MonoBehaviour
 {
-    public GameObject PropTest;
     private GameObject _propToPlace = null;
+    private PropMapper _propMapper;
 
     private void Start()
     {
-        PlaceProp(PropsEnum.FUTON);
+        _propMapper = FindObjectOfType<PropMapper>();
+        PlaceProp(PropEnum.FUTON);
     }
 
-    public void PlaceProp(PropsEnum propToPlace)
+    public void PlaceProp(PropEnum propToPlace)
     {
-        _propToPlace = Instantiate(PropTest);
+        _propToPlace = Instantiate(_propMapper.FindPrefab(propToPlace));
 
         _propToPlace.AddComponent<PropCollisionDetection>();
         _propToPlace.layer = 2; // "Removing Raycast Layer"
