@@ -233,7 +233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _propMap:
   - PropEnum: 0
-    Prefab: {fileID: 0}
+    Prefab: {fileID: 5931854655668209383, guid: a87dc2c4f8cbf624ab4ec3b409e17070, type: 3}
 --- !u!1 &279073959
 GameObject:
   m_ObjectHideFlags: 0

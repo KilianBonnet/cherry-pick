@@ -8,7 +8,8 @@ public class PropCollisionDetection : MonoBehaviour
 
     private void Start()
     {
-        _outline = gameObject.AddComponent<Outline>();
+        _outline = gameObject.GetComponent<Outline>();
+        _outline.enabled = true;
         _outline.color = 1;
     }
 
@@ -30,5 +31,8 @@ public class PropCollisionDetection : MonoBehaviour
         _outline.color = 1;
     }
 
-
+    private void OnDestroy()
+    {
+        _outline.enabled = false;
+    }
 }
