@@ -7,12 +7,12 @@ public class Settings : MonoBehaviour
     private SettingsModel _settings;
     public LangEnum Language => _settings.Language;
 
-    private SaveManager _saveManager;
+    private FileManager _saveManager;
 
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
-        _saveManager = FindObjectOfType<SaveManager>();
+        _saveManager = FindObjectOfType<FileManager>();
         _settings = _saveManager.LoadSettings();
     }
 }

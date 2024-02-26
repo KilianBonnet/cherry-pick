@@ -976,7 +976,7 @@ GameObject:
   - component: {fileID: 1285875970}
   - component: {fileID: 1285875971}
   m_Layer: 0
-  m_Name: Save Manager
+  m_Name: Data Loader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

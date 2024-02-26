@@ -7,7 +7,7 @@ public class GameLoader : MonoBehaviour
 
     public void LoadGame(int gameDataId)
     {
-        SaveManager saveManager = FindAnyObjectByType<SaveManager>();
+        FileManager saveManager = FindAnyObjectByType<FileManager>();
         GameDataModel gameDataModel = saveManager.LoadGameData(gameDataId);
     }
 

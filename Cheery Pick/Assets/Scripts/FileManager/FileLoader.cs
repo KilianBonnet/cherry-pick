@@ -1,35 +1,21 @@
-using System.IO;
-using UnityEngine;
-using Newtonsoft.Json;
-using System.Collections.Generic;
 using System;
+using System.Collections.Generic;
+using System.IO;
+using Newtonsoft.Json;
+using UnityEngine;
 
-public class SaveManager : MonoBehaviour
+public static class FileLoader
 {
-    private static string _rootFilePath;
-
-    private const string _settingsFileName = "settings.json";
-
-    private const string _gameDataFileName = "gameDataX.json";
-    private const int _maxGameDataFile = 3;
-
-    private void Start()
-    {
-        DontDestroyOnLoad(gameObject);
-        _rootFilePath = Application.persistentDataPath;
-    }
-
-
     /// <summary>
     /// Try load the SettingsModel from persistent memory.
     /// If the load fail, it will return the default SettingsModel.
     /// </summary>
     /// <returns>The loaded SettingsModel</returns>
-    public SettingsModel LoadSettings()
+    public static SettingsModel LoadSettings()
     {
         try
         {
-            return Load<SettingsModel>(_settingsFileName);
+            return Load<SettingsModel>(FileManager.SettingsFileName);
         }
         catch (Exception e)
         {
@@ -44,9 +30,9 @@ public class SaveManager : MonoBehaviour
     /// </summary>
     /// <param name="gameDataId">The if of the GameDataModel to load.</param>
     /// <returns>The loaded SettingsModel</returns>
-    public GameDataModel LoadGameData(int gameDataId)
+    public static GameDataModel LoadGameData(int gameDataId)
     {
-        string fileName = _gameDataFileName.Replace("X", gameDataId.ToString());
+        string fileName = FileManager.GameDataFileName.Replace("X", gameDataId.ToString());
         try
         {
             return Load<GameDataModel>(fileName);
@@ -62,13 +48,13 @@ public class SaveManager : MonoBehaviour
     /// Get all saved game data ids.
     /// </summary>
     /// <returns>The List of saved game data ids.</returns>
-    public List<int> GetSavedGameDataIds()
+    public static List<int> GetSavedGameDataIds()
     {
         List<int> savedGameDataIds = new();
-        for (int i = 1; i <= _maxGameDataFile; i++)
+        for (int i = 1; i <= FileManager.MaxGameDataFile; i++)
         {
-            string fileName = _gameDataFileName.Replace("X", i.ToString());
-            string filePath = Path.Combine(_rootFilePath, fileName);
+            string fileName = FileManager.GameDataFileName.Replace("X", i.ToString());
+            string filePath = Path.Combine(FileManager.RootFilePath, fileName);
             if (File.Exists(filePath))
                 savedGameDataIds.Add(i);
         }
@@ -82,9 +68,9 @@ public class SaveManager : MonoBehaviour
     /// <typeparam name="T">The class of the model to load.</typeparam>
     /// <param name="fileName">The name of the file in the prescient memory.</param>
     /// <returns>The loaded model.</returns>
-    private T Load<T>(string fileName)
+    private static T Load<T>(string fileName)
     {
-        string filePath = Path.Combine(_rootFilePath, fileName);
+        string filePath = Path.Combine(FileManager.RootFilePath, fileName);
         string modelName = typeof(T).Name;
 
         if (File.Exists(filePath))

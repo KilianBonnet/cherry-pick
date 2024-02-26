@@ -11,7 +11,7 @@ public class MainMenuManager : MonoBehaviour
 
     private void SetupGameDataButtons()
     {
-        SaveManager saveManager = FindAnyObjectByType<SaveManager>();
+        FileManager saveManager = FindAnyObjectByType<FileManager>();
         GameDataButton[] gameDataButtons = FindObjectsOfType<GameDataButton>();
 
         foreach (int gameDataId in saveManager.GetSavedGameDataIds())
