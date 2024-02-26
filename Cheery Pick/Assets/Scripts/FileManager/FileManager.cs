@@ -16,7 +16,7 @@ public class FileManager : MonoBehaviour
         RootFilePath = Application.persistentDataPath;
     }
 
-    public static SettingsModel LoadSettings() => FileLoader.LoadSettings();
-    public static GameDataModel LoadGameData(int gameDataId) => FileLoader.LoadGameData(gameDataId);
-    public static List<int> GetSavedGameDataIds() => FileLoader.GetSavedGameDataIds();
+    public SettingsModel LoadSettings() => FileLoader.LoadSettings();
+    public GameDataModel LoadGameData(int gameDataId) => FileLoader.LoadGameData(gameDataId);
+    public List<int> GetSavedGameDataIds() => FileLoader.GetSavedGameDataIds();
 }

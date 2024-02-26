@@ -11,10 +11,10 @@ public class MainMenuManager : MonoBehaviour
 
     private void SetupGameDataButtons()
     {
-        FileManager saveManager = FindAnyObjectByType<FileManager>();
+        FileManager fileManager = FindAnyObjectByType<FileManager>();
         GameDataButton[] gameDataButtons = FindObjectsOfType<GameDataButton>();
 
-        foreach (int gameDataId in saveManager.GetSavedGameDataIds())
+        foreach (int gameDataId in fileManager.GetSavedGameDataIds())
         {
             GameDataButton find = gameDataButtons.First(gameDataButton => gameDataButton.GameDataId == gameDataId);
             find.Behaviour = GameDataButtonBehaviour.LOAD;
