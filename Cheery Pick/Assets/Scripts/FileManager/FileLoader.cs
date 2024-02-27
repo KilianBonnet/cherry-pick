@@ -13,10 +13,7 @@ public static class FileLoader
     /// <returns>The loaded SettingsModel</returns>
     public static SettingsModel LoadSettings()
     {
-        try
-        {
-            return Load<SettingsModel>(FileManager.SettingsFileName);
-        }
+        try { return Load<SettingsModel>(FileManager.SettingsFileName); }
         catch (Exception e)
         {
             Debug.LogWarning($"{e.Message} Loading default SettingsModel.");
@@ -33,10 +30,8 @@ public static class FileLoader
     public static GameDataModel LoadGameData(int gameDataId)
     {
         string fileName = FileManager.GameDataFileName.Replace("X", gameDataId.ToString());
-        try
-        {
-            return Load<GameDataModel>(fileName);
-        }
+
+        try { return Load<GameDataModel>(fileName); }
         catch (Exception e)
         {
             Debug.LogError(e.Message);
@@ -44,23 +39,18 @@ public static class FileLoader
         }
     }
 
-    /// <summary>
-    /// Get all saved game data ids.
-    /// </summary>
-    /// <returns>The List of saved game data ids.</returns>
-    public static List<int> GetSavedGameDataIds()
-    {
-        List<int> savedGameDataIds = new();
-        for (int i = 1; i <= FileManager.MaxGameDataFile; i++)
-        {
-            string fileName = FileManager.GameDataFileName.Replace("X", i.ToString());
-            string filePath = Path.Combine(FileManager.RootFilePath, fileName);
-            if (File.Exists(filePath))
-                savedGameDataIds.Add(i);
-        }
-        return savedGameDataIds;
-    }
 
+    /// <summary>
+    /// Check if a game data file exists with the given game data id.
+    /// </summary>
+    /// <param name="gameDataId">The game data id to check if a file exists.</param>
+    /// <returns>Whether or not the game data file exists.</returns>
+    public static bool HasSavedGameData(int gameDataId)
+    {
+        string fileName = FileManager.GameDataFileName.Replace("X", gameDataId.ToString());
+        string filePath = Path.Combine(FileManager.RootFilePath, fileName);
+        return File.Exists(filePath);
+    }
 
     /// <summary>
     /// Load a T model from a specific fileName.

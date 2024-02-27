@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class FileManager : MonoBehaviour
 {
-    public static string RootFilePath { get; private set; }
+    public static string RootFilePath => Application.persistentDataPath;
 
     public const string SettingsFileName = "settings.json";
 
@@ -13,10 +13,9 @@ public class FileManager : MonoBehaviour
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
-        RootFilePath = Application.persistentDataPath;
     }
 
     public SettingsModel LoadSettings() => FileLoader.LoadSettings();
     public GameDataModel LoadGameData(int gameDataId) => FileLoader.LoadGameData(gameDataId);
-    public List<int> GetSavedGameDataIds() => FileLoader.GetSavedGameDataIds();
+    public bool HasSavedGameDataId(int gameDataId) => FileLoader.HasSavedGameData(gameDataId);
 }
