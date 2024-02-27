@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-String-Tables-Chinese (Simplified) (zh)
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-String-Tables-Chinese (Simplified) (zh)
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 6054ad1de27c08a4794fd93521307243
+  m_SerializeEntries:
+  - m_GUID: 9eb8e5b7fd390af4ebe734b03afdfe62
+    m_Address: MainMenuScene_zh
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-zh
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 85eb3b9d277a5e148a3f70c2819b7c00
+    m_Address: IntroScene_zh
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-zh
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 856b2d3ad7b8f7b4d9b3402b6485c486
+    m_Address: Props_zh
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-zh
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: 4415ca454a948cc4b89cc29a26f9d03d, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 39283de10f594ec4486c817adcd25c14, type: 2}
+    - {fileID: 11400000, guid: 080090a31210e884a824e1445f280b06, type: 2}

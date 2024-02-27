@@ -19,11 +19,11 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 5102241775616
-    m_Localized: new game
+    m_Localized: New game
     m_Metadata:
       m_Items: []
   - m_Id: 5102304690176
-    m_Localized: load game
+    m_Localized: Load game
     m_Metadata:
       m_Items: []
   references:
