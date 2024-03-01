@@ -724,7 +724,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 540ddff9a70cacc43af1a4bf8dfa25a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _textUi: {fileID: 1150760692}
   _characterDelta: 0.2
 --- !u!82 &1150760696
 AudioSource:
