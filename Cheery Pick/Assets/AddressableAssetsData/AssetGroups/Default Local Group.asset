@@ -16,7 +16,12 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 4210ade96b3764c45ac5853fa92553ce
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: fa73378d31dc57f489225259fcd66c48
+    m_Address: Assets/Ressources/Props/jb_double_bed/jb_double_bed.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 4415ca454a948cc4b89cc29a26f9d03d, type: 2}
   m_SchemaSet:

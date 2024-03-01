@@ -1,11 +1,10 @@
 using System;
 using System.Linq;
-using cakeslice;
 using UnityEngine;
 
 public class PropInteractable : MonoBehaviour
 {
-    public bool _isSelected;
+    private bool _isSelected;
     private Outline _outline;
 
     private void Start()
@@ -30,15 +29,15 @@ public class PropInteractable : MonoBehaviour
     private void Select()
     {
         _isSelected = true;
-        _outline.eraseRenderer = false;
-        _outline.color = 2;
+        _outline.enabled = true;
+        _outline.OutlineColor = Color.blue;
     }
 
 
     private void Deselect()
     {
         _isSelected = false;
-        _outline.eraseRenderer = true;
+        _outline.enabled = false;
     }
 
 }

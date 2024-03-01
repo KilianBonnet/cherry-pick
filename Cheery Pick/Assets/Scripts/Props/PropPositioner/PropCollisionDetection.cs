@@ -1,4 +1,3 @@
-using cakeslice;
 using UnityEngine;
 
 public class PropCollisionDetection : MonoBehaviour
@@ -6,11 +5,14 @@ public class PropCollisionDetection : MonoBehaviour
     public bool CanBePlaced { get; private set; }
     private Outline _outline;
 
+    private static readonly Color _CollidedColor = Color.red;
+    private static readonly Color _NonCollidedColor = Color.green;
+
     private void Start()
     {
         _outline = gameObject.GetComponent<Outline>();
-        _outline.eraseRenderer = false;
-        _outline.color = 1;
+        _outline.enabled = true;
+        _outline.OutlineColor = _NonCollidedColor;
     }
 
     private void OnCollisionStay(Collision other)
@@ -19,7 +21,7 @@ public class PropCollisionDetection : MonoBehaviour
             return;
 
         CanBePlaced = false;
-        _outline.color = 0;
+        _outline.OutlineColor = _CollidedColor;
     }
 
     private void OnCollisionExit(Collision other)
@@ -28,11 +30,11 @@ public class PropCollisionDetection : MonoBehaviour
             return;
 
         CanBePlaced = true;
-        _outline.color = 1;
+        _outline.OutlineColor = _NonCollidedColor;
     }
 
     private void OnDestroy()
     {
-        _outline.eraseRenderer = true;
+        _outline.enabled = false;
     }
 }
